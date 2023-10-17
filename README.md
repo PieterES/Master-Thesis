@@ -17,9 +17,11 @@ ____________________________
 
 1. Contents
 
-".thesis"                           - The thesis describes the key idea of the provided algorithm. No need to read the technical design of the algorithm.
+".thesis"                            - The thesis describes the key idea of the provided algorithm. No need to read the technical design of the algorithm.
 "./TD3"                              - The environment and experimental setup used for the TD3 agent.
 "./FOCOPS"                           - The environment and experimental setup used for the FOCOPS agent.
+"./FOCOPS_WORKS_LSTM"                - The environment and experimental setup used for the FOCOPS agent with a LSTM layer.
+"./FLICKER"                          - The environment and experimental setup for TD3 with flicker conditions.
 
 None of the contained source files may be publicly published or provided to anyone not affiliated with Utrecht University and this project. They are intended to remain private.
 
@@ -94,6 +96,9 @@ Replay buffer used for TD3. If we want to use a LSTM layer, change LSTM to True 
 
 > ".algos/TD3"
 Main TD3 algortihm script. If we want to use a LSTM layer, change LSTM to True at the top. Other hyperparameters can be changed in the TD3 class and if other activation functions want to be used, change these in the critic and actor forward functions. PPO and DDPG can be used similarly.
+
+> Flicker:
+The only change to the flicker condition is the percentage change of receiving 0 inputs instead of normal data. This value cn be changed in the gym_torcs.py file at the end of the step function. Either 'newstate' is the actual observations, or an array of 0's. 
 
 FOCOPS: 
 For FOCOPS the recurrent algorithm and the non-recurrent one are separated.
